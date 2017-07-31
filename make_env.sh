@@ -230,7 +230,6 @@ install() {
 ## start
 ###############
 ACTION=$1
-echo $ACTION
 case ${ACTION} in
     'help') usage;;
 *) install; exit 1;;
