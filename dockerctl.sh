@@ -59,7 +59,6 @@ usage() {
 ## start
 ###############
 ACTION=$1
-echo $ACTION
 case ${ACTION} in
 '') usage;;
 'build') build;;
