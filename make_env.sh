@@ -212,6 +212,21 @@ install_gitolite() {
     # key存放在C:\Users\Administrator\.ssh
 }
 
+# 7. node
+install_node() {
+    NODE_VERSION=v8.4.0
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
+    source ~/.bashrc
+    nvm install ${NODE_VERSION}
+}
+
+# 8. openresty
+install_openresty() {
+    sudo yum install -y yum-utils
+    sudo yum-config-manager --add-repo https://openresty.org/package/centos/openresty.repo
+    sudo yum install -y openresty
+}
+
 ############################################
 usage() {
     echo "Usage: $0 "
@@ -224,6 +239,8 @@ install() {
     install_erlang
     install_redis
     install_git
+    install_node
+    install_openresty
 }
 
 ###############
