@@ -123,6 +123,7 @@ install_erlang() {
     cd ${ROOT} \
         && tar zxf rebar-${REBAR_VERSION}.tar.gz \
         && cd rebar-${REBAR_VERSION} \
+        && ./configure --prefix=/usr/local/erlang --enable-hipe --enable-threads --enable-smp-support --enable-kernel-poll --without-javac \
         && make \
         && cp rebar /usr/bin/rebar \
         && cd ${ROOT} && rm -rf ${ROOT}/rebar-${REBAR_VERSION}
